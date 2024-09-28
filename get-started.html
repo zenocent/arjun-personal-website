@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Started - Zenocent</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            padding-top: 70px;
+            background: #ffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0px 2.5%;
+        }
+
+        .btn-back {
+            position: absolute;
+            top: 10px;
+            left: 2.5%;
+            width: max-content;
+            height: max-content;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-bottom: 20px;
+            font-size: 25px;
+            text-decoration: none;
+        }
+
+        .card {
+            margin-top: 70px;
+            width: 100%;
+            height: max-content;
+            padding: 10px;
+            background-color: #ffff;
+            box-shadow: 0 0px 1px black;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 50px;
+        }
+
+        .card-ds {
+            height: max-content;
+            width: 100%;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .card-ds h1 {
+            font-size: 30px;
+            font-family: sans-serif;
+        }
+
+        .ds-card1 {
+            width: 50px;
+            height: 50px;
+            border: 2px solid rgb(0,100,255);
+            border-radius: 50%;
+            padding: 5px;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ds-card2 {
+            width: 100%;
+            height: 100%;
+            border: 2px solid rgb(255, 0, 0);
+            border-radius: 50%;
+        }
+
+        .card-content {
+            font-size: 18px;
+            font-family: sans-serif;
+        }
+
+        #text {
+            width: 100%;
+            height: 50px;
+            padding: 0 10px;
+            font-size: 18px;
+            font-family: sans-serif;
+            border: 2px solid rgb(0,100,255);
+            border-radius: 5px;
+        }
+
+        #text:focus {
+            background: rgba(223, 246, 253, 0.5);
+            outline-color: rgb(0,100,255);
+        }
+
+        .submit {
+            width: 50%;
+            padding: 10px;
+            font-size: 18px;
+            font-family: sans-serif;
+            border: none;
+            border-radius: 5px;
+            background-color: rgb(0,100,255);
+            color: #ffff;
+            cursor: pointer;
+        }
+
+        /* container 2 */
+
+        .result {
+            box-shadow: 0 0px 1px black;
+            width: 100%;
+            height: max-content;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 50px;
+        }
+
+        .result-content {
+            font-size: 18px;
+            font-family: sans-serif;
+        }
+
+        #result {
+            width: 100%;
+            height: 50px;
+            padding:10px;
+            font-size: 18px;
+            font-family: sans-serif;
+            border: 2px solid rgb(0,100,255);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 50px;
+            font-size: 18px;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        footer p {
+            font-size: 18px;
+            font-family: sans-serif;
+        }
+
+        @media screen and (max-width: 768px) {
+
+            .card-content {
+                font-size: 16px;
+            }
+
+            .submit {
+                font-size: 16px;
+            }
+
+            .result-content {
+                font-size: 16px;
+            }
+        }
+
+
+    </style>
+
+<script src="https://kit.fontawesome.com/3e1e50e166.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+    <a href="index.html" class="btn-back">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <!-- card 1 = untuk input user -->
+    <div class="card">
+        <div class="card-ds">
+            <div class="ds-card1">
+                <div class="ds-card2"></div>
+            </div>
+
+            <h1>Zenocent</h1>
+        </div>
+
+        <label for="content" class="card-content">Ketikkan sebuah kata untuk Zenocent, dan lihat respon apa yang akan diberikan.
+            <br><br>
+            <input type="text" name="" id="text" placeholder="Ketikkan kata...">
+            <br><br>
+            <button class="submit" onclick="showResult()">Kirim</button>
+        </label>
+    </div>
+
+    <!-- card 2 = hasil result -->
+    <div class="result">
+        <label for="result" class="result-content">Hasil anda akan muncul disini.
+            <br><br>
+            <p id="result"></p>
+        </label>
+    </div>
+
+    <!-- footer -->
+     <footer>
+        <p>&copy; Zenocent. All Rights Reserved.</p>
+     </footer>
+
+     <script>
+
+function showResult() {
+            const input = document.getElementById('text').value;
+            let response;
+            if (input) {
+                response = `Anda mengetikkan: ${input}`;
+            } else {
+                response = "Silakan ketikkan sesuatu.";
+            }
+            document.getElementById('result').innerText = response;
+        }
+
+     </script>
+    
+</body>
+</html>
